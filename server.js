@@ -10,7 +10,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
   if(err) {
     console.log("ERROR:", err);
   } else {
-    use = JSON.parse(data)
+    user = JSON.parse(data)
   }
 });
 
@@ -36,7 +36,7 @@ app.get('/author', (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  res.render("author", );
+  res.render("harid", );
 });
 
 const server = http.createServer(app);
