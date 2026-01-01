@@ -1,14 +1,24 @@
-// A TASK 
+// B TASK 
+function countDigits(str) {
+  return (str.match(/\d/g) || []).length;
+}
 
-const countVowels = (word) => {
-    count = 0;
-    for(letter of word){
-        "aeiou".includes(letter) ? count++ : 0;
-    }
-    console.log(count);
-};
+console.log(countDigits("ad2a54y79wet0sfgb9")); // 7
 
-countVowels("engineer");
+
+
+
+// // A TASK 
+
+// const countVowels = (word) => {
+//     count = 0;
+//     for(letter of word){
+//         "aeiou".includes(letter) ? count++ : 0;
+//     }
+//     console.log(count);
+// };
+
+// countVowels("engineer");
 
 
 
