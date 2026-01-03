@@ -1,9 +1,56 @@
-// B TASK 
-function countDigits(str) {
-  return (str.match(/\d/g) || []).length;
+// TASK-C
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  // vaqtni olish uchun yordamchi metod
+  time() {
+    const now = new Date();
+    return now.getHours() + ":" + now.getMinutes();
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this.time()} da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud`
+    );
+  }
+
+  sotish(nomi, soni) {
+    this[nomi] -= soni;
+    console.log(`${soni} ta ${nomi} sotildi`);
+  }
+
+  qabul(nomi, soni) {
+    this[nomi] += soni;
+    console.log(`${soni} ta ${nomi} qabul qilindi`);
+  }
 }
 
-console.log(countDigits("ad2a54y79wet0sfgb9")); // 7
+// ===== TEST =====
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq();
+
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+shop.qoldiq();
+
+
+
+
+
+
+
+// // // B TASK 
+// function countDigits(str) {
+//   return (str.match(/\d/g) || []).length;
+// }
+
+// console.log(countDigits("ad2a54y79wet0sfgb9")); // 7
 
 
 
