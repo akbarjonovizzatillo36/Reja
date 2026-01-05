@@ -1,43 +1,68 @@
-// TASK-C
+// TASK D
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// Ikkita parametra ega function tuzing, va functioning
+// berilgan birinchi va ikkinchi parametr qiymatlari o'zaro to'liq
+// mos kelsa true qiymat qaytarsin
 
-  // vaqtni olish uchun yordamchi metod
-  time() {
-    const now = new Date();
-    return now.getHours() + ":" + now.getMinutes();
-  }
+// Masalan: checkContent("mitgroup", "gmtiprou");
+// Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
+// ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
 
-  qoldiq() {
-    console.log(
-      `Hozir ${this.time()} da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud`
-    );
-  }
 
-  sotish(nomi, soni) {
-    this[nomi] -= soni;
-    console.log(`${soni} ta ${nomi} sotildi`);
-  }
-
-  qabul(nomi, soni) {
-    this[nomi] += soni;
-    console.log(`${soni} ta ${nomi} qabul qilindi`);
-  }
+function checkContent(a, b) {
+  let s1 = a.split('').sort().join('');
+  let s2 = b.split('').sort().join('');
+  return s1 === s2;
 }
 
-// ===== TEST =====
-const shop = new Shop(4, 5, 2);
+// Misol uchun:
+console.log(checkContent("mitgroup", "gmtiprou")); // true
 
-shop.qoldiq();
 
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-shop.qoldiq();
+
+
+
+
+// // TASK-C
+
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
+
+//   // vaqtni olish uchun yordamchi metod
+//   time() {
+//     const now = new Date();
+//     return now.getHours() + ":" + now.getMinutes();
+//   }
+
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this.time()} da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud`
+//     );
+//   }
+
+//   sotish(nomi, soni) {
+//     this[nomi] -= soni;
+//     console.log(`${soni} ta ${nomi} sotildi`);
+//   }
+
+//   qabul(nomi, soni) {
+//     this[nomi] += soni;
+//     console.log(`${soni} ta ${nomi} qabul qilindi`);
+//   }
+// }
+
+// // ===== TEST =====
+// const shop = new Shop(4, 5, 2);
+
+// shop.qoldiq();
+
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq();
 
 
 
